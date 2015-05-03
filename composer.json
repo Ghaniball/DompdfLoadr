@@ -1,0 +1,29 @@
+{
+    "name": "winify/dompdf-loadr",
+    "type": "composer-plugin",
+    "license": "GPL",
+    "description": "Composer plugin which preloads dompdf constans by injecting them in composer autoload file",
+    "keywords": [
+        "composer", "autoloader", "classloader", "alias"
+    ],
+    "homepage": "http://github.com/Ghaniball/DompdfLoadr",
+    "authors": [
+        {
+            "name": "Ivan Godorogea",
+            "email": "igodorogea@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "Winify\\DompdfLoadr\\": "Classes/"}
+    },
+    "require": {
+        "composer-plugin-api": "1.0.0",
+        "dompdf/dompdf" : "0.6.*"
+    },
+    "extra": {
+        "class": "Winify\\DompdfLoadr\\Composer\\Plugin",
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}
