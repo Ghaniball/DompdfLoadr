@@ -46,16 +46,16 @@ EOF;
 		$dompdfFontCacheFileContent = <<<EOF
 $originalDompdfFontCacheFileContent
 	'times' => array(
-		'normal' => DOMPDF_DIR . '/lib/fonts/times',
-		'bold' => DOMPDF_DIR . '/lib/fonts/timesbd',
-		'italic' => DOMPDF_DIR . '/lib/fonts/timesi',
-		'bold_italic' => DOMPDF_DIR . '/lib/fonts/timesbi'
+		'normal' => '$vendorPath/winify/dompdf-loadr/fonts/times',
+		'bold' => '$vendorPath/winify/dompdf-loadr/fonts/timesbd',
+		'italic' => $vendorPath/winify/dompdf-loadr/fonts/timesi',
+		'bold_italic' => $vendorPath/winify/dompdf-loadr/fonts/timesbi'
 	),
 	'arial' => array(
-		'normal' => DOMPDF_DIR . '/lib/fonts/arial',
-		'bold' => DOMPDF_DIR . '/lib/fonts/arialbd',
-		'italic' => DOMPDF_DIR . '/lib/fonts/ariali',
-		'bold_italic' => DOMPDF_DIR . '/lib/fonts/arialbi'
+		'normal' => $vendorPath/winify/dompdf-loadr/fonts/arial',
+		'bold' => $vendorPath/winify/dompdf-loadr/fonts/arialbd',
+		'italic' => $vendorPath/winify/dompdf-loadr/fonts/ariali',
+		'bold_italic' => $vendorPath/winify/dompdf-loadr/fonts/arialbi'
 	),
 ) ?>
 EOF;
