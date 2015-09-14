@@ -41,25 +41,25 @@ $originalAutoloadFileContent
 EOF;
 		file_put_contents($vendorPath . '/autoload.php', $autoloadFileContent);
 
-		$originalDompdfFontCacheFileContent = str_replace(') ?>', '', file_get_contents($vendorPath . '/dompdf/dompdf/lib/fonts/dompdf_font_family_cache.dist.php'));
-
-		$dompdfFontCacheFileContent = <<<EOF
-$originalDompdfFontCacheFileContent
+		$updatedFonts = <<<EOF
 	'times' => array(
 		'normal' => '$vendorPath/winify/dompdf-loadr/fonts/times',
 		'bold' => '$vendorPath/winify/dompdf-loadr/fonts/timesbd',
-		'italic' => $vendorPath/winify/dompdf-loadr/fonts/timesi',
-		'bold_italic' => $vendorPath/winify/dompdf-loadr/fonts/timesbi'
+		'italic' => '$vendorPath/winify/dompdf-loadr/fonts/timesi',
+		'bold_italic' => '$vendorPath/winify/dompdf-loadr/fonts/timesbi'
 	),
 	'arial' => array(
-		'normal' => $vendorPath/winify/dompdf-loadr/fonts/arial',
-		'bold' => $vendorPath/winify/dompdf-loadr/fonts/arialbd',
-		'italic' => $vendorPath/winify/dompdf-loadr/fonts/ariali',
-		'bold_italic' => $vendorPath/winify/dompdf-loadr/fonts/arialbi'
+		'normal' => '$vendorPath/winify/dompdf-loadr/fonts/arial',
+		'bold' => '$vendorPath/winify/dompdf-loadr/fonts/arialbd',
+		'italic' => '$vendorPath/winify/dompdf-loadr/fonts/ariali',
+		'bold_italic' => '$vendorPath/winify/dompdf-loadr/fonts/arialbi'
 	),
-) ?>
+) /* UPDATED */ ?>
 EOF;
-		file_put_contents($vendorPath . '/dompdf/dompdf/lib/fonts/dompdf_font_family_cache.dist.php', $dompdfFontCacheFileContent);
+
+		$updatedDompdfFontCacheFileContent = str_replace(') ?>', $updatedFonts, file_get_contents($vendorPath . '/dompdf/dompdf/lib/fonts/dompdf_font_family_cache.dist.php'));
+
+		file_put_contents($vendorPath . '/dompdf/dompdf/lib/fonts/dompdf_font_family_cache.dist.php', $updatedDompdfFontCacheFileContent);
 
 		return true;
 	}
