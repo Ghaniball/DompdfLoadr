@@ -17,8 +17,8 @@
         "psr-4": { "Winify\\DompdfLoadr\\": "Classes/"}
     },
     "require": {
-        "composer-plugin-api": "1.0.0",
-        "dompdf/dompdf" : "0.6.*"
+        "composer-plugin-api": "^1.0",
+        "dompdf/dompdf" : "^0.6"
     },
     "extra": {
         "class": "Winify\\DompdfLoadr\\Composer\\Plugin",
